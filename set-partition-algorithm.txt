@@ -1,0 +1,19 @@
+From Knuth 4a, p.416:
+
+Algorithm H (Restricted growth strings in lexicographic order).  Given n>=2, this algorithm generates all partitions of {1, 2, ..., n} by visiting all strings a1 a2 ... an that satisfy the restricted growth condition:
+
+	  a1 = 0 and aj+1 <= 1 + max(a1, ..., aj) for 1 <= j < n
+
+We maintain an auxiliary array b1 b2 ... bn, where bj+1 = 1 + max(a1, ... aj); the value of bn is actually kept in a separate variable, m, for efficiency.
+
+H1. [Initialize.]  Set a1...an <- 0...0, b1...bn <- 1...1, and m <- 1.
+
+H2. [Visit.]  Visit the restricted growth string a1...an, which represents a partition into m + [an = m] blocks. Then go to H4 if an = m.
+
+H3. [Increase an.]  Set an <- an + 1 and return to H2.
+
+H4. [Find j.]  Set j <- n-1; then, while aj = bj, set j <- j-1.
+
+H5. [Increase aj.]  Terminate if j=1. Otherwise set aj <- aj + 1.
+
+H6. [Zero out aj+1 ... an.]  Set m <- bj + [aj = bj] and j <- j + 1. Then, while j < n, set aj <- 0, bj <- m, and j <- j + 1. Finally set an <- 0 and go back to H2.

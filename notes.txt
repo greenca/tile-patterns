@@ -1,0 +1,3 @@
+Simulated annealing. 
+Heuristic for optimization.
+Simpler than steepest-descent.
