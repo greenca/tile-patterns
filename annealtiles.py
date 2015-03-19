@@ -2,6 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 import random
+import time
+
+t = time.time()
 
 
 numColours = 4
@@ -9,7 +12,7 @@ numRows = 4
 numColumns = 4
 colours = range(numColours)
 
-temp = 100000000
+temp = 100000
 numSwaps = 10
 
 
@@ -69,3 +72,6 @@ for i, c in enumerate(bestVals):
 plt.imshow(tiles, interpolation='nearest')
 plt.axis('off')
 plt.show()
+
+elapsed = time.time() - t
+print elapsed

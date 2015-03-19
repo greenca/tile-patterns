@@ -2,10 +2,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 import itertools
+import time
+
+t = time.time()
 
 
 numColours = 4
-numRows = 4
+numRows = 3
 numColumns = 3
 
 
@@ -48,3 +51,6 @@ for colour in maxGroups:
 plt.imshow(tiles, interpolation='nearest')
 plt.axis('off')
 plt.show()
+
+elapsed = time.time() - t
+print elapsed

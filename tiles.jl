@@ -3,8 +3,8 @@ tic()
 using PyPlot
 
 numColours = 4
-numRows = 3
-numColumns = 3
+numRows = 4
+numColumns = 2
 
 function getRowCol(index)
     return (div(index-1,numColumns)+1, (index-1)%numColumns+1)
